@@ -47,7 +47,8 @@ stochastic_search <- function(dim_param, perf_fun,
       update_range <- loop_seq[i]:(loop_seq[i+1] - 1)
       new_param[update_range] <- new_param[update_range] +
         curiosity * runif(length(update_range), min = -0.001, max = 0.001)
-      new_perf <- perf_fun(new_param)
+      new_perf <- tryCatch(perf_fun(new_param), error = function(e) e)
+      if ("error" %in% class(new_perf)) next
       new_loss <- loss_fun(new_perf, target_perf) + lambda * reg_fun(param)
       if (new_loss < current_loss) {
         curiosity <- curiosity * curioisty_decrease_factor
