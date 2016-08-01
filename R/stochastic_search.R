@@ -8,16 +8,16 @@
 #' @param max_iter integer; maximum number of iterations.
 #' @param tol numeric; tolerence for the loss functions.
 #' @param curiosity numeric; search parameter.
-#' @param block_num
-#' @param block_size
+#' @param block_num integer.
+#' @param block_size integer.
 #' @param lambda numeric; regularisation parameter.
 #' @param reg_fun function; regularisation funciton, see 'zero_reg', 'L1_reg', 'L2_reg'.
 #' @param param numeric vector; parameter from previous run of the function.
 #' @details Denote the dimension of the parameters by d.
 #' If the stochastic search didn't improve in 5*d block iterations, then it will
 #' increase the curiosity by 10 folds. On the other hand, all improvements are
-#' associated with a 0.001 decrease curiosity. This is to create the oscillatary
-#' behaviour.
+#' associated with a 0.001 decrease curiosity. This is to create oscillatary
+#' behaviour of the curiosity parameter.
 stochastic_search <- function(dim_param, perf_fun,
                               loss_fun=ls_loss, target_perf,
                               max_iter=100, tol=0, curiosity=1,

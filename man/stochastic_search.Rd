@@ -24,6 +24,10 @@ e.g. a curve.}
 
 \item{curiosity}{numeric; search parameter.}
 
+\item{block_num}{integer.}
+
+\item{block_size}{integer.}
+
 \item{lambda}{numeric; regularisation parameter.}
 
 \item{reg_fun}{function; regularisation funciton, see 'zero_reg', 'L1_reg', 'L2_reg'.}
@@ -37,7 +41,7 @@ This algorithm is used to find
 Denote the dimension of the parameters by d.
 If the stochastic search didn't improve in 5*d block iterations, then it will
 increase the curiosity by 10 folds. On the other hand, all improvements are
-associated with a 0.001 decrease curiosity. This is to create the oscillatary
-behaviour.
+associated with a 0.001 decrease curiosity. This is to create oscillatary
+behaviour of the curiosity parameter.
 }
 
