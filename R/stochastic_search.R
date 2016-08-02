@@ -1,5 +1,5 @@
 #' Stochastic Search
-#' @description This algorithm is used to find
+#' @description An stochasic algorithm for optimisation
 #' @param dim_param integer; the dimension of the parameters.
 #' @param perf_fun function; the performance function mapping parameters to an outcome,
 #' e.g. a curve.

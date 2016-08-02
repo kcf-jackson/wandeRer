@@ -35,7 +35,7 @@ e.g. a curve.}
 \item{param}{numeric vector; parameter from previous run of the function.}
 }
 \description{
-This algorithm is used to find
+An stochasic algorithm for optimisation
 }
 \details{
 Denote the dimension of the parameters by d.
